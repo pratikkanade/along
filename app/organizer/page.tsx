@@ -22,8 +22,8 @@ export default function OrganizerPage() {
     <div className="flex flex-1 flex-col bg-zinc-50 px-4 pt-safe pb-safe dark:bg-black sm:pt-12">
       <div className="mx-auto w-full max-w-3xl">
         <div className="mb-6 flex items-center justify-between">
-          <span className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-            Along · Organizer
+          <span className="text-lg font-medium text-zinc-900 dark:text-zinc-50">
+            <span className="font-brand text-xl">Along</span> · Organizer
           </span>
           <Link
             href="/"

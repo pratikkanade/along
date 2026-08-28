@@ -24,7 +24,7 @@ export function AlongIntro({ onDone }: { onDone: () => void }) {
 
   return (
     <div className={`along-intro ${phase === "exit" ? "along-intro-exit" : ""}`}>
-      <div className={`along-intro-word ${resolved ? "along-intro-word-resolved" : ""}`}>
+      <div className={`along-intro-word font-brand ${resolved ? "along-intro-word-resolved" : ""}`}>
         <span>Al</span>
         <span>o</span>
         <span>n</span>

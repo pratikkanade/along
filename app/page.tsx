@@ -27,7 +27,7 @@ export default function Home() {
       {showIntro && <AlongIntro onDone={() => setShowIntro(false)} />}
       <div className="flex w-full max-w-xl flex-col items-center">
         <div className="mb-8 flex w-full items-center justify-between">
-          <span className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50">Along</span>
+          <span className="font-brand text-xl text-zinc-900 dark:text-zinc-50">Along</span>
           <Link
             href="/organizer"
             className="text-sm font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50"

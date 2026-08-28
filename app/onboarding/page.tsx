@@ -64,7 +64,7 @@ export default function OnboardingConfirmPage() {
     <div className="flex flex-1 flex-col items-center bg-zinc-50 px-4 pt-safe pb-safe dark:bg-black sm:pt-16">
       <div className="w-full max-w-md">
         <div className="mb-6 flex items-center justify-between">
-          <span className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50">Along</span>
+          <span className="font-brand text-xl text-zinc-900 dark:text-zinc-50">Along</span>
           <Link href="/" className="text-sm font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50">
             Skip
           </Link>
