@@ -12,6 +12,8 @@ const querySchema = z.object({
 
 type HexRow = {
   h3: string;
+  lat: number;
+  lon: number;
   family_key: string;
   posted: string;
   matched: string;
@@ -26,7 +28,10 @@ export async function hexRoutes(app: FastifyInstance): Promise<void> {
     const familyFilter = familyKey ? "AND family_key = {family_key:String}" : "";
     try {
       const rows = await queryRows<HexRow>(
-        `SELECT lower(hex(h3_8)) AS h3, family_key,
+        `SELECT lower(hex(h3_8)) AS h3,
+                tupleElement(h3ToGeo(h3_8), 1) AS lat,
+                tupleElement(h3ToGeo(h3_8), 2) AS lon,
+                family_key,
                 sumMerge(posted) AS posted,
                 sumMerge(matched) AS matched,
                 sumMerge(unmatched) AS unmatched,
@@ -43,6 +48,8 @@ export async function hexRoutes(app: FastifyInstance): Promise<void> {
       return {
         data: rows.map((row) => ({
           h3: row.h3,
+          lat: Number(row.lat),
+          lon: Number(row.lon),
           family_key: row.family_key,
           posted: Number(row.posted),
           matched: Number(row.matched),

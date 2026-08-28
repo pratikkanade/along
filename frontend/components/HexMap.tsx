@@ -62,14 +62,16 @@ export function HexMap({ clusters }: { clusters: HexCluster[] }) {
             >
               <circle cx={x} cy={y} r={radius} fill={color} fillOpacity={0.35} stroke={color} strokeWidth={1.5} />
               <circle cx={x} cy={y} r={3} fill={color} />
-              <text
-                x={x}
-                y={y - radius - 6}
-                textAnchor="middle"
-                className="fill-zinc-500 text-[9px] font-medium dark:fill-zinc-400"
-              >
-                {c.name}
-              </text>
+              {c.name && (
+                <text
+                  x={x}
+                  y={y - radius - 6}
+                  textAnchor="middle"
+                  className="fill-zinc-500 text-[9px] font-medium dark:fill-zinc-400"
+                >
+                  {c.name}
+                </text>
+              )}
             </g>
           );
         })}

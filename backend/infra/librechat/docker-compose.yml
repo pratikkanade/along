@@ -35,13 +35,9 @@ services:
 volumes:
   librechat-data:
     name: rally-librechat-source_librechat-data
-    external: true
   librechat-images:
     name: rally-librechat-source_librechat-images
-    external: true
   librechat-uploads:
     name: rally-librechat-source_librechat-uploads
-    external: true
   mongodb-data:
     name: rally-librechat-source_mongodb-data
-    external: true
