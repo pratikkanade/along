@@ -64,39 +64,33 @@ body {
   color: #f97316;
 }
 
-.along-intro-swap {
-  position: relative;
+.along-intro-letter {
   display: inline-block;
-  width: 0.62em;
-  height: 1em;
+  vertical-align: baseline;
+  transform-origin: 50% 85%;
 }
 
-.along-intro-e,
-.along-intro-g {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transition: opacity 350ms ease, transform 350ms ease;
+.along-intro-letter-flip {
+  animation: along-letter-flip 480ms ease-in-out;
 }
 
-.along-intro-e {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-.along-intro-e-hide {
-  opacity: 0;
-  transform: translateY(-0.35em) scale(0.5);
-}
-
-.along-intro-g {
-  opacity: 0;
-  transform: translateY(0.35em) scale(0.5);
-}
-
-.along-intro-g-show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+@keyframes along-letter-flip {
+  0% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  45% {
+    transform: scaleY(0.1);
+    opacity: 0.3;
+  }
+  55% {
+    transform: scaleY(0.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
 .along-intro-question {
