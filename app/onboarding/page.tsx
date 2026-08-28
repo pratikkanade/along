@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { markOnboarded } from "@/lib/onboarding";
 
 type Chip = { id: string; label: string };
 
@@ -65,7 +66,11 @@ export default function OnboardingConfirmPage() {
       <div className="w-full max-w-md">
         <div className="mb-6 flex items-center justify-between">
           <span className="font-brand font-medium text-xl text-zinc-900">Along</span>
-          <Link href="/" className="text-sm font-medium text-zinc-600 hover:text-zinc-900">
+          <Link
+            href="/"
+            onClick={markOnboarded}
+            className="text-sm font-medium text-zinc-600 hover:text-zinc-900"
+          >
             Skip
           </Link>
         </div>
@@ -106,7 +111,10 @@ export default function OnboardingConfirmPage() {
         </div>
 
         <button
-          onClick={() => router.push("/")}
+          onClick={() => {
+            markOnboarded();
+            router.push("/");
+          }}
           className="mt-6 h-12 w-full rounded-full bg-orange-500 text-sm font-semibold text-white transition-colors hover:bg-orange-600"
         >
           Looks right — continue
