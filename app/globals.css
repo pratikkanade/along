@@ -122,10 +122,10 @@ body {
 /* Shared visual primitives: pastel gradient background, glass cards, voice orb */
 
 .along-gradient-bg {
-  background: radial-gradient(circle at 15% 20%, rgba(253, 186, 116, 0.14) 0%, transparent 55%),
-    radial-gradient(circle at 85% 25%, rgba(249, 168, 212, 0.13) 0%, transparent 55%),
-    radial-gradient(circle at 75% 85%, rgba(196, 181, 253, 0.13) 0%, transparent 55%),
-    radial-gradient(circle at 15% 85%, rgba(147, 197, 253, 0.12) 0%, transparent 55%),
+  background: radial-gradient(circle at 15% 20%, rgba(196, 181, 253, 0.14) 0%, transparent 55%),
+    radial-gradient(circle at 85% 25%, rgba(147, 197, 253, 0.13) 0%, transparent 55%),
+    radial-gradient(circle at 75% 85%, rgba(167, 243, 208, 0.13) 0%, transparent 55%),
+    radial-gradient(circle at 15% 85%, rgba(165, 243, 252, 0.12) 0%, transparent 55%),
     #ffffff;
   background-size: 180% 180%;
   animation: along-gradient-shift 24s ease-in-out infinite;
