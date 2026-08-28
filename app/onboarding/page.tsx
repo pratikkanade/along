@@ -64,7 +64,7 @@ export default function OnboardingConfirmPage() {
     <div className="flex flex-1 flex-col items-center bg-zinc-50 px-4 pt-safe pb-safe dark:bg-black sm:pt-16">
       <div className="w-full max-w-md">
         <div className="mb-6 flex items-center justify-between">
-          <span className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50">Rally</span>
+          <span className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50">Along</span>
           <Link href="/" className="text-sm font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50">
             Skip
           </Link>
@@ -75,7 +75,7 @@ export default function OnboardingConfirmPage() {
           Here&rsquo;s what I heard
         </h1>
         <p className="mb-6 text-sm text-zinc-500 dark:text-zinc-400">
-          From your voice intro. Tap × to remove anything that&rsquo;s wrong — we&rsquo;ll learn the rest as you use Rally.
+          From your voice intro. Tap × to remove anything that&rsquo;s wrong — we&rsquo;ll learn the rest as you use Along.
         </p>
 
         <div className="flex flex-col gap-5 rounded-2xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">

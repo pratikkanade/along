@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { AlongIntro } from "@/components/AlongIntro";
 import { VoiceInput } from "@/components/VoiceInput";
 import { MatchCard } from "@/components/MatchCard";
 import { DEMO_INTENT, MOCK_ELAPSED_MS, mockMatches } from "@/lib/mockData";
@@ -9,6 +10,7 @@ import { DEMO_INTENT, MOCK_ELAPSED_MS, mockMatches } from "@/lib/mockData";
 export default function Home() {
   const [intent, setIntent] = useState("");
   const [posted, setPosted] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
 
   const handlePost = () => {
     if (!intent.trim()) return;
@@ -22,9 +24,10 @@ export default function Home() {
 
   return (
     <div className="flex flex-1 flex-col items-center bg-zinc-50 px-4 pt-safe pb-safe dark:bg-black sm:pt-16">
+      {showIntro && <AlongIntro onDone={() => setShowIntro(false)} />}
       <div className="flex w-full max-w-xl flex-col items-center">
         <div className="mb-8 flex w-full items-center justify-between">
-          <span className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50">Rally</span>
+          <span className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50">Along</span>
           <Link
             href="/organizer"
             className="text-sm font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50"

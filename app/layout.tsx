@@ -13,12 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rally",
+  title: "Along",
   description: "Real-time, spontaneous meetup matching.",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Rally",
+    title: "Along",
   },
 };
 

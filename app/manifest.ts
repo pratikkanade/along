@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Rally — free right now",
-    short_name: "Rally",
+    name: "Along — free right now",
+    short_name: "Along",
     description: "Real-time, spontaneous meetup matching.",
     start_url: "/",
     display: "standalone",
