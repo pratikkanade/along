@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { VoiceOrb } from "@/components/VoiceOrb";
+import { AlongIntro } from "@/components/AlongIntro";
 
 export default function WelcomePage() {
   return (
@@ -8,7 +9,9 @@ export default function WelcomePage() {
 
       <div className="flex flex-col items-center text-center">
         <VoiceOrb state="idle" size={140} />
-        <h1 className="font-brand font-medium mt-6 text-5xl text-zinc-900">Along</h1>
+        <h1 className="mt-6">
+          <AlongIntro />
+        </h1>
         <h2 className="mt-6 max-w-xs text-2xl font-medium text-zinc-800">
           You don&rsquo;t have to do this alone.
         </h2>
