@@ -1,0 +1,15 @@
+version: 1.3.14
+cache: true
+
+mcpServers:
+  clickhouse-cloud:
+    title: Rally ClickHouse Analytics
+    description: Read-only access to Rally matching and organizer analytics.
+    type: streamable-http
+    url: https://mcp.clickhouse.cloud/mcp
+    requiresOAuth: true
+    initTimeout: 30000
+    timeout: 60000
+    serverInstructions: >-
+      Rally uses live_intents for live matching and hex_activity_agg for organizer analytics.
+      Query only; never claim that seeded hackathon demand is production data.

@@ -1,0 +1,47 @@
+name: rally-librechat
+
+services:
+  api:
+    container_name: rally-librechat
+    image: registry.librechat.ai/danny-avila/librechat-dev:latest
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    ports:
+      - "${PORT:-3080}:3080"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3080
+      MONGO_URI: mongodb://mongodb:27017/LibreChat
+      LIBRECHAT_TEMP_CREDENTIALS_PATH: /app/data/.env.temp
+    volumes:
+      - type: bind
+        source: ./.env
+        target: /app/.env
+      - type: bind
+        source: ./librechat.yaml
+        target: /app/librechat.yaml
+      - librechat-data:/app/data
+      - librechat-images:/app/client/public/images
+      - librechat-uploads:/app/uploads
+  mongodb:
+    container_name: rally-librechat-mongodb
+    image: mongo:4.4.18
+    restart: unless-stopped
+    command: mongod --noauth
+    volumes:
+      - mongodb-data:/data/db
+
+volumes:
+  librechat-data:
+    name: rally-librechat-source_librechat-data
+    external: true
+  librechat-images:
+    name: rally-librechat-source_librechat-images
+    external: true
+  librechat-uploads:
+    name: rally-librechat-source_librechat-uploads
+    external: true
+  mongodb-data:
+    name: rally-librechat-source_mongodb-data
+    external: true
