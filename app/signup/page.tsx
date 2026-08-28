@@ -54,7 +54,7 @@ function OtpForm() {
               onKeyDown={(e) => handleKeyDown(index, e)}
               inputMode="numeric"
               maxLength={1}
-              className="h-12 w-10 rounded-xl border border-zinc-200 bg-white/70 text-center text-lg font-medium text-zinc-900 focus:border-orange-400 focus:outline-none"
+              className="h-12 w-10 rounded-xl border border-zinc-200 bg-white/70 text-center text-lg font-medium text-zinc-900 focus:border-violet-400 focus:outline-none"
             />
           ))}
         </div>
@@ -62,7 +62,7 @@ function OtpForm() {
         <button
           onClick={() => router.push("/signup/welcome")}
           disabled={!complete}
-          className="mt-6 h-12 w-full rounded-full bg-orange-500 text-sm font-semibold text-white transition-colors hover:bg-orange-600 disabled:cursor-not-allowed disabled:bg-zinc-300"
+          className="mt-6 h-12 w-full rounded-full bg-violet-500 text-sm font-semibold text-white transition-colors hover:bg-violet-600 disabled:cursor-not-allowed disabled:bg-zinc-300"
         >
           Verify
         </button>

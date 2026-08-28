@@ -81,7 +81,7 @@ export default function VoiceOnboardingPage() {
           <div
             key={i}
             className={`along-glass max-w-[85%] px-4 py-2.5 text-sm ${
-              turn.speaker === "along" ? "self-start text-zinc-800" : "self-end bg-orange-500/15 text-zinc-900"
+              turn.speaker === "along" ? "self-start text-zinc-800" : "self-end bg-violet-500/15 text-zinc-900"
             }`}
           >
             {turn.text}

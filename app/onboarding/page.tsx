@@ -23,7 +23,7 @@ function ChipRow({
           key={chip.id}
           className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${
             tone === "accent"
-              ? "bg-orange-50 text-orange-700 dark:bg-orange-950 dark:text-orange-300"
+              ? "bg-violet-50 text-violet-700 dark:bg-violet-950 dark:text-violet-300"
               : "bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
           }`}
         >
@@ -75,7 +75,7 @@ export default function OnboardingConfirmPage() {
           </Link>
         </div>
 
-        <p className="mb-1 text-xs font-medium uppercase tracking-wide text-orange-600">Step 3 of 4</p>
+        <p className="mb-1 text-xs font-medium uppercase tracking-wide text-violet-600">Step 3 of 4</p>
         <h1 className="mb-2 text-2xl font-semibold tracking-tight text-zinc-900">
           Here&rsquo;s what I heard
         </h1>
@@ -115,7 +115,7 @@ export default function OnboardingConfirmPage() {
             markOnboarded();
             router.push("/");
           }}
-          className="mt-6 h-12 w-full rounded-full bg-orange-500 text-sm font-semibold text-white transition-colors hover:bg-orange-600"
+          className="mt-6 h-12 w-full rounded-full bg-violet-500 text-sm font-semibold text-white transition-colors hover:bg-violet-600"
         >
           Looks right — continue
         </button>

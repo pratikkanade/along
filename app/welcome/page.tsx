@@ -21,7 +21,7 @@ export default function WelcomePage() {
       <div className="along-glass flex w-full max-w-xs flex-col items-center gap-3 p-4">
         <Link
           href="/login"
-          className="h-12 w-full rounded-full bg-orange-500 text-center text-sm font-semibold leading-[3rem] text-white transition-colors hover:bg-orange-600"
+          className="h-12 w-full rounded-full bg-violet-500 text-center text-sm font-semibold leading-[3rem] text-white transition-colors hover:bg-violet-600"
         >
           Get started
         </Link>

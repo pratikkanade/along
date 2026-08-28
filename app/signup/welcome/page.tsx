@@ -17,7 +17,7 @@ export default function PostSignupWelcomePage() {
 
       <button
         onClick={() => router.push("/onboarding/choice")}
-        className="mt-8 h-12 w-full max-w-xs rounded-full bg-orange-500 text-sm font-semibold text-white transition-colors hover:bg-orange-600"
+        className="mt-8 h-12 w-full max-w-xs rounded-full bg-violet-500 text-sm font-semibold text-white transition-colors hover:bg-violet-600"
       >
         Let&rsquo;s go
       </button>
