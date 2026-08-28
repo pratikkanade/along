@@ -23,7 +23,7 @@ export default function OrganizerPage() {
       <div className="mx-auto w-full max-w-3xl">
         <div className="mb-6 flex items-center justify-between">
           <span className="text-lg font-medium text-zinc-900 dark:text-zinc-50">
-            <span className="font-brand text-xl">Along</span> · Organizer
+            <span className="font-brand font-medium text-xl">Along</span> · Organizer
           </span>
           <Link
             href="/"

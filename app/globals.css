@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-brand: var(--font-quintessential);
+  --font-sans: var(--font-neue-montreal);
+  --font-brand: var(--font-neue-montreal);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,7 +22,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-family: var(--font-neue-montreal), Arial, Helvetica, sans-serif;
 }
 
 .pt-safe {
@@ -54,8 +54,9 @@ body {
   position: relative;
   display: inline-flex;
   align-items: baseline;
-  font-size: 4rem;
-  font-weight: 400;
+  font-size: 3.5rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   color: #a1a1aa;
   transition: color 500ms ease;
 }
@@ -116,4 +117,147 @@ body {
 .along-intro-star-show {
   opacity: 1;
   transform: scale(1) rotate(0deg);
+}
+
+/* Shared visual primitives: pastel gradient background, glass cards, voice orb */
+
+.along-gradient-bg {
+  background: radial-gradient(circle at 15% 20%, rgba(253, 186, 116, 0.55) 0%, transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(249, 168, 212, 0.5) 0%, transparent 45%),
+    radial-gradient(circle at 75% 85%, rgba(196, 181, 253, 0.5) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(147, 197, 253, 0.45) 0%, transparent 45%),
+    #fffaf3;
+  background-size: 180% 180%;
+  animation: along-gradient-shift 24s ease-in-out infinite;
+}
+
+@keyframes along-gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 0;
+  }
+  50% {
+    background-position: 15% 20%, 85% 25%, 80% 80%, 15% 80%, 0 0;
+  }
+}
+
+.along-glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(88, 28, 135, 0.08);
+  border-radius: 28px;
+}
+
+.along-orb-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.along-orb-glow {
+  position: absolute;
+  inset: -25%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(251, 146, 60, 0.35) 0%,
+    rgba(244, 114, 182, 0.28) 35%,
+    rgba(167, 139, 250, 0.22) 65%,
+    transparent 75%
+  );
+  filter: blur(24px);
+  animation: along-orb-breathe 5s ease-in-out infinite;
+}
+
+.along-orb-glow-listening {
+  animation-duration: 1.8s;
+  opacity: 1.1;
+}
+
+.along-orb-glow-speaking {
+  animation-duration: 0.7s;
+}
+
+.along-orb {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #fb923c, #f472b6, #a78bfa, #60a5fa, #fb923c);
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.45), 0 10px 40px rgba(167, 139, 250, 0.35);
+}
+
+.along-orb::after {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 60%);
+}
+
+.along-orb-idle {
+  animation: along-orb-rotate 18s linear infinite, along-orb-breathe 5s ease-in-out infinite;
+}
+
+.along-orb-listening {
+  animation: along-orb-rotate 10s linear infinite, along-orb-breathe 1.8s ease-in-out infinite;
+}
+
+.along-orb-speaking {
+  animation: along-orb-rotate 4s linear infinite, along-orb-pulse 0.6s ease-in-out infinite;
+}
+
+.along-orb-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(167, 139, 250, 0.5);
+  animation: along-orb-ring-expand 2.4s ease-out infinite;
+}
+
+.along-orb-ring-2 {
+  animation-delay: 1.2s;
+}
+
+@keyframes along-orb-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes along-orb-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.09);
+  }
+}
+
+@keyframes along-orb-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes along-orb-ring-expand {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
