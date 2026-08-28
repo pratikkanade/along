@@ -96,7 +96,7 @@ export default function LoginPage() {
         />
 
         <button
-          onClick={() => router.push("/signup")}
+          onClick={() => router.push(`/signup?email=${encodeURIComponent(email)}`)}
           disabled={!email.trim()}
           className="mt-4 h-12 w-full rounded-full bg-orange-500 text-sm font-semibold text-white transition-colors hover:bg-orange-600 disabled:cursor-not-allowed disabled:bg-zinc-300"
         >

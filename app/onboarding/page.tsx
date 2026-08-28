@@ -61,47 +61,47 @@ export default function OnboardingConfirmPage() {
     setter((prev) => prev.filter((c) => c.id !== id));
 
   return (
-    <div className="flex flex-1 flex-col items-center bg-zinc-50 px-4 pt-safe pb-safe dark:bg-black sm:pt-16">
+    <div className="along-gradient-bg flex flex-1 flex-col items-center px-4 pt-safe pb-safe sm:pt-16">
       <div className="w-full max-w-md">
         <div className="mb-6 flex items-center justify-between">
-          <span className="font-brand font-medium text-xl text-zinc-900 dark:text-zinc-50">Along</span>
-          <Link href="/" className="text-sm font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50">
+          <span className="font-brand font-medium text-xl text-zinc-900">Along</span>
+          <Link href="/" className="text-sm font-medium text-zinc-600 hover:text-zinc-900">
             Skip
           </Link>
         </div>
 
-        <p className="mb-1 text-xs font-medium uppercase tracking-wide text-orange-500">Step 3 of 4</p>
-        <h1 className="mb-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+        <p className="mb-1 text-xs font-medium uppercase tracking-wide text-orange-600">Step 3 of 4</p>
+        <h1 className="mb-2 text-2xl font-semibold tracking-tight text-zinc-900">
           Here&rsquo;s what I heard
         </h1>
-        <p className="mb-6 text-sm text-zinc-500 dark:text-zinc-400">
+        <p className="mb-6 text-sm text-zinc-600">
           From your voice intro. Tap × to remove anything that&rsquo;s wrong — we&rsquo;ll learn the rest as you use Along.
         </p>
 
-        <div className="flex flex-col gap-5 rounded-2xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="along-glass flex flex-col gap-5 p-5">
           <div>
-            <p className="mb-2 text-xs font-semibold text-zinc-400">Interests</p>
+            <p className="mb-2 text-xs font-semibold text-zinc-500">Interests</p>
             <ChipRow chips={interests} onRemove={remove(setInterests)} tone="accent" />
           </div>
           <div>
-            <p className="mb-2 text-xs font-semibold text-zinc-400">Languages</p>
+            <p className="mb-2 text-xs font-semibold text-zinc-500">Languages</p>
             <ChipRow chips={languages} onRemove={remove(setLanguages)} />
           </div>
           <div>
-            <p className="mb-2 text-xs font-semibold text-zinc-400">Usually free</p>
+            <p className="mb-2 text-xs font-semibold text-zinc-500">Usually free</p>
             <ChipRow chips={availability} onRemove={remove(setAvailability)} />
           </div>
         </div>
 
-        <div className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
-          <p className="mb-3 text-xs font-semibold text-zinc-400">Safety, from your taps earlier</p>
+        <div className="along-glass mt-4 p-5">
+          <p className="mb-3 text-xs font-semibold text-zinc-500">Safety, from your taps earlier</p>
           <dl className="grid grid-cols-2 gap-y-2 text-sm">
-            <dt className="text-zinc-500 dark:text-zinc-400">Comfortable meeting</dt>
-            <dd className="text-right font-medium text-zinc-900 dark:text-zinc-50">Anyone</dd>
-            <dt className="text-zinc-500 dark:text-zinc-400">Meeting places</dt>
-            <dd className="text-right font-medium text-zinc-900 dark:text-zinc-50">Public only</dd>
-            <dt className="text-zinc-500 dark:text-zinc-400">Radius</dt>
-            <dd className="text-right font-medium text-zinc-900 dark:text-zinc-50">Walk · 1km</dd>
+            <dt className="text-zinc-600">Comfortable meeting</dt>
+            <dd className="text-right font-medium text-zinc-900">Anyone</dd>
+            <dt className="text-zinc-600">Meeting places</dt>
+            <dd className="text-right font-medium text-zinc-900">Public only</dd>
+            <dt className="text-zinc-600">Radius</dt>
+            <dd className="text-right font-medium text-zinc-900">Walk · 1km</dd>
           </dl>
         </div>
 
