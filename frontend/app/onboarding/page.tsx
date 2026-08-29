@@ -111,10 +111,7 @@ export default function OnboardingConfirmPage() {
         </div>
 
         <button
-          onClick={() => {
-            markOnboarded();
-            router.push("/");
-          }}
+          onClick={() => router.push("/onboarding/complete")}
           className="mt-6 h-12 w-full rounded-full bg-violet-500 text-sm font-semibold text-white transition-colors hover:bg-violet-600"
         >
           Looks right — continue

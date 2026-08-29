@@ -4,6 +4,69 @@ export const DEMO_INTENT = "anyone want to play pickleball in the Mission in the
 
 export const MOCK_ELAPSED_MS = 11;
 
+// The signed-in demo user, shown on the home + profile screens.
+export type CurrentUser = {
+  name: string;
+  initial: string;
+  avatarColor: string;
+  trustScore: number;
+  interests: string[];
+};
+
+export const currentUser: CurrentUser = {
+  name: "Sanjana",
+  initial: "S",
+  avatarColor: "#8B5CF6",
+  trustScore: 4.9,
+  interests: ["Pickleball", "Tennis", "Board games", "Coffee chats"],
+};
+
+// Profile-based quick prompts that prefill the home intent input.
+export const suggestionPills: string[] = [
+  "Pickleball this evening",
+  "Coffee chat",
+  "Board game night",
+  "Evening run",
+  "Someone to grab lunch",
+];
+
+// "Happening near you" — other people's open requests on the home feed.
+export type NeighborhoodPost = {
+  id: string;
+  name: string;
+  initial: string;
+  avatarColor: string;
+  timeAgo: string;
+  text: string;
+};
+
+export const neighborhoodFeed: NeighborhoodPost[] = [
+  {
+    id: "n1",
+    name: "Devon P.",
+    initial: "DP",
+    avatarColor: "#0EA5E9",
+    timeAgo: "12m ago",
+    text: "Hey there's this comedy show nearby tonight, need some company, anyone interested?",
+  },
+  {
+    id: "n2",
+    name: "Marisol A.",
+    initial: "MA",
+    avatarColor: "#A855F7",
+    timeAgo: "28m ago",
+    text: "Feel like jamming today, any guitarist or drummer nearby in the mood?",
+  },
+  {
+    id: "n3",
+    name: "Theo K.",
+    initial: "TK",
+    avatarColor: "#22C55E",
+    timeAgo: "41m ago",
+    text: "Grabbing a coffee at Ritual on Valencia, would love company for an hour.",
+  },
+];
+
 export const mockMatches: Match[] = [
   {
     id: "m1",

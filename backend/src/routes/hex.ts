@@ -6,7 +6,7 @@ import { dependencyError } from "../errors.js";
 
 const querySchema = z.object({
   metric: z.enum(["posted", "matched", "unmatched"]).default("posted"),
-  hours: z.coerce.number().int().min(1).max(72).default(24),
+  hours: z.coerce.number().int().min(1).max(720).default(24),
   family_key: z.string().trim().min(1).max(100).optional(),
 });
 

@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
+/* Along is a light-only design (all mockups are light). Redefine the `dark:`
+   variant to be class-based so system dark-mode never flips components, and pin
+   the color scheme to light so native controls stay light on any device. */
+@variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -10,13 +16,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-neue-montreal);
   --font-brand: var(--font-neue-montreal);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
